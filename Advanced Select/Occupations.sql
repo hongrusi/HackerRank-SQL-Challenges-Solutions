@@ -8,7 +8,7 @@ from(
             when Occupation='Professor' then (@p:=@p+1)
             when Occupation='Singer' then (@s:=@s+1)
             when Occupation='Actor' then (@a:=@a+1) 
-            end as Row,
+            end as Row_number,
         case when Occupation='Doctor' then Name end as Doctor,
         case when Occupation='Professor' then Name end as Professor,
         case when Occupation='Singer' then Name end as Singer,
@@ -16,4 +16,4 @@ from(
   from OCCUPATIONS
   order by Name
 ) as temp
-group by Row;
+group by Row_number;
